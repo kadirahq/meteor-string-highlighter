@@ -10,8 +10,11 @@ Npm.depends({
 });
 
 Package.on_use(function(api) {
+  if(api.versionsFrom){
+    api.versionsFrom('METEOR@0.9.0');
+  }
   api.use(["jquery"]);
-  api.use(["local:regex-query-filter"]);
+  api.use(["kadira:regex-query-filter@0.0.3"]);
   api.use("cosmos:browserify@0.3.0");
   api.export("StringHighlighter", "client");
   api.add_files("client.browserify.js", "client");
@@ -26,7 +29,7 @@ Package.onTest(function(api) {
     "tinytest",
     "kadira:regex-query-filter"
   ]);
-  api.use("local:string-highlighter");
+  api.use("kadira:string-highlighter");
   api.addFiles("lib/string-highlighter.js", "client");
   api.addFiles("test/string-highlighter.js", "client");
 });
