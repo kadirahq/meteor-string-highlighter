@@ -16,7 +16,7 @@ var keywords = ["keyword1", "keyword2"];
 StringHighlighter._wrapInTag(element, keywords);
 ```
 
-#### Replace with `<higlight>` tag before the html loads into document
+#### Replace with `<highlight>` tag before the html loads into document
 
 ```javascript
 var html = StringHighlighter._replaceWithHighlightTag(html, keyword);
